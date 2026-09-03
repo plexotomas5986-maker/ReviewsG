@@ -1,0 +1,511 @@
+/* =========================================
+   VARIABLES DE COLOR
+========================================= */
+
+:root {
+    --background: #0f1115;
+    --card-background: #181b21;
+    --input-background: #101217;
+
+    --text: #f5f5f5;
+    --secondary-text: #aeb4bf;
+
+    --border: #2b3039;
+
+    --primary: #4285f4;
+    --primary-hover: #357ae8;
+
+    --danger: #ef4444;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   MODO CLARO
+========================================= */
+
+body.light-theme {
+    --background: #f4f6f8;
+    --card-background: #ffffff;
+    --input-background: #f8f9fa;
+
+    --text: #17191c;
+    --secondary-text: #626873;
+
+    --border: #dfe3e8;
+
+    --primary: #4285f4;
+    --primary-hover: #357ae8;
+
+    --danger: #dc2626;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   RESETEO GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 50px 20px 25px;
+
+    text-align: center;
+}
+
+
+header h1 {
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+header p {
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    color: var(--secondary-text);
+
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   BOTÓN MODO OSCURO / CLARO
+========================================= */
+
+#themeToggle {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--card-background);
+    color: var(--text);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#themeToggle:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+main {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 10px 20px 40px;
+
+    flex: 1;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+section {
+    width: 100%;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+section + section {
+    margin-top: 20px;
+}
+
+
+section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--secondary-text);
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input {
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 14px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    outline: none;
+
+    background: var(--input-background);
+    color: var(--text);
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.25s ease;
+}
+
+
+input::placeholder {
+    color: var(--secondary-text);
+    opacity: 0.75;
+}
+
+
+input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+
+/* =========================================
+   BOTÓN PRINCIPAL
+========================================= */
+
+#generateButton {
+    width: 100%;
+
+    min-height: 52px;
+
+    margin-top: 16px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+#generateButton:hover {
+    background: var(--primary-hover);
+}
+
+
+#generateButton:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   RESULTADO
+========================================= */
+
+#resultSection h2 {
+    margin-bottom: 14px;
+}
+
+
+#reviewLink {
+    font-size: 14px;
+
+    cursor: text;
+}
+
+
+/* =========================================
+   BOTONES DEL RESULTADO
+========================================= */
+
+.buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 14px;
+}
+
+
+.buttons button {
+    flex: 1;
+
+    min-height: 48px;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+.buttons button:active {
+    transform: scale(0.98);
+}
+
+
+/* Botón copiar */
+
+#copyButton {
+    border: 1px solid var(--border);
+
+    background: var(--input-background);
+    color: var(--text);
+}
+
+
+#copyButton:hover {
+    background: var(--border);
+}
+
+
+/* Botón abrir */
+
+#openButton {
+    border: none;
+
+    background: var(--primary);
+    color: white;
+}
+
+
+#openButton:hover {
+    background: var(--primary-hover);
+}
+
+
+/* =========================================
+   MENSAJE DE ERROR
+========================================= */
+
+#errorSection {
+    border-color: rgba(239, 68, 68, 0.35);
+
+    box-shadow: none;
+}
+
+
+#errorMessage {
+    color: var(--danger);
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    width: 100%;
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   ELEMENTOS OCULTOS
+========================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 55px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    header h1 {
+        font-size: 26px;
+    }
+
+
+    header p {
+        font-size: 14px;
+    }
+
+
+    main {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+
+    section {
+        padding: 20px;
+
+        border-radius: 16px;
+    }
+
+
+    section h2 {
+        font-size: 18px;
+    }
+
+
+    input {
+        font-size: 14px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+    }
+
+
+    .buttons button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+@media (max-width: 360px) {
+
+    header h1 {
+        font-size: 23px;
+    }
+
+
+    section {
+        padding: 17px;
+    }
+
+
+    #themeToggle {
+        width: 38px;
+        height: 38px;
+
+        font-size: 16px;
+    }
+}

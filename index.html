@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generador de reseñas de Google</title>
+
+    <!-- Más adelante agregaremos el CSS -->
+    <link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Generador de reseñas</h1>
+
+        <p>
+            Pegá el enlace de Google Maps de tu local
+            y generá un enlace directo para dejar una reseña.
+        </p>
+
+        <!-- Botón de modo oscuro/claro -->
+        <button id="themeToggle" type="button">
+            🌙
+        </button>
+    </header>
+
+
+    <main>
+
+        <!-- SECCIÓN DE INGRESO -->
+        <section id="inputSection">
+
+            <h2>Enlace de Google Maps</h2>
+
+            <label for="mapsLink">
+                Pegá acá el enlace del local:
+            </label>
+
+            <input
+                type="url"
+                id="mapsLink"
+                name="mapsLink"
+                placeholder="https://www.google.com/maps/place/..."
+                autocomplete="off"
+            >
+
+            <button id="generateButton" type="button">
+                Generar enlace de reseña
+            </button>
+
+        </section>
+
+
+        <!-- SECCIÓN DEL RESULTADO -->
+        <section id="resultSection" hidden>
+
+            <h2>Enlace generado</h2>
+
+            <input
+                type="text"
+                id="reviewLink"
+                readonly
+            >
+
+            <div class="buttons">
+
+                <button id="copyButton" type="button">
+                    Copiar enlace
+                </button>
+
+                <button id="openButton" type="button">
+                    Abrir reseña
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECCIÓN DE ERROR -->
+        <section id="errorSection" hidden>
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Generador de enlaces de reseñas de Google
+        </p>
+    </footer>
+
+
+    <!-- Más adelante agregaremos la lógica JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
